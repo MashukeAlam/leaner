@@ -6,10 +6,6 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 /* Random background generator using HSL for better control */
@@ -63,11 +59,7 @@ body {
   margin: 1px 0;
 }
 
-.focus input, .todo input {
-  user-select: text;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
+.focus input {
   background: none;
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.8);
@@ -75,6 +67,7 @@ body {
   font-size: 1.5rem;
   width: 400px;
   text-align: center;
+  user-select: none;
 }
 
 .focus input::placeholder {
