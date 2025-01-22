@@ -1,13 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "Leaner",
+    "name": "cat stretch",
     "version": "1.0",
     "description": "A beautiful health conscious dashboard for your new tabs",
     "permissions": [
       "storage",
       "geolocation"
     ],
-    "host_permissions": ["https://zenquotes.io/", "https://cdn.tailwindcss.com"],
+    "host_permissions": ["https://zenquotes.io/", "https://cdn.tailwindcss.com/"],
     "chrome_url_overrides": {
       "newtab": "index.html"
     },

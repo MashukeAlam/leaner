@@ -1,6 +1,7 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
     randomizeBackground();
+    displayImages();
     // Update time
     function updateTime() {
       const timeDisplay = document.getElementById('time');
@@ -97,6 +98,82 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTodos();
   });
 
+  // Image data with captions
+  const imageData = {
+    'arm-strech-up.jpg': [
+      'Stretch those arms up high!',
+      'Reach for the sky',
+      'Feel the energy flow through your arms',
+      'Wake up your upper body'
+    ],
+    'drink-water.jpg': [
+      'At least drink some water if there\'s no milk',
+      'Hope your throat is not sahara desert',
+      'Take a water break!',
+      'Hydration is key to wellness'
+    ],
+    'fat-heart.png': [
+      'Fat cat fantastic, not sure about humans though',
+      'How about cutting some sugar from your diet?',
+      'A lean cat would go further than this one',
+      'YHM (your heart matters)'
+    ],
+    'forward-bend.jpeg': [
+      'Humans should be able to do that too!',
+      'Can your belly allow you to do that?',
+      'Feel the hamstring stretch',
+      'Don\'t just sit on chair all day...'
+    ],
+    'praise.jpg': [
+      'Were you a good boy by doing some exercises today?',
+      'You\'re doing great!',
+      'Keep going strong',
+      'This cat is proud of you!'
+    ],
+    'relax-sleep.jpg': [
+      'Power nap, power up.',
+      'Relaxed minds think sharper.',
+      'Well-rested, unstoppable.',
+      'Recharge yourself'
+    ],
+    'save-back.jpg': [
+      'Protect your back',
+      'Mind your posture',
+      'Back health is important',
+      'Stand up straight'
+    ]
+  };
+
+  function getRandomCaption(captions) {
+    const randomIndex = Math.floor(Math.random() * captions.length);
+    return captions[randomIndex];
+  }
+
+  function displayImages() {
+    const container = document.getElementById('image-container');
+    container.innerHTML = ''; // Clear existing content
+    
+    // Get random image
+    const imageNames = Object.keys(imageData);
+    const randomImageName = imageNames[Math.floor(Math.random() * imageNames.length)];
+    const captions = imageData[randomImageName];
+    
+    const wrapper = document.createElement('div');
+    wrapper.className = 'image-wrapper';
+    
+    const img = document.createElement('img');
+    img.src = `pics/${randomImageName}`;
+    img.alt = randomImageName.split('.')[0].replace(/-/g, ' ');
+    
+    const caption = document.createElement('div');
+    caption.className = 'image-caption';
+    caption.textContent = getRandomCaption(captions);
+    
+    wrapper.appendChild(img);
+    wrapper.appendChild(caption);
+    container.appendChild(wrapper);
+  }
+
   function randomizeBackground() {
     const hue1 = Math.floor(Math.random() * 360);
     const hue2 = (hue1 + Math.floor(Math.random() * 60) - 30 + 360) % 360;
@@ -105,11 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.background = `
       linear-gradient(
         135deg,
-        hsl(${hue1}, 40%, 15%) 0%,
-        hsl(${hue2}, 35%, 20%) 50%,
-        hsl(${hue3}, 30%, 25%) 100%
+        hsl(${hue1}, 25%, 65%) 0%,
+        hsl(${hue2}, 20%, 70%) 50%,
+        hsl(${hue3}, 15%, 75%) 100%
       )
     `;
   }
-  
-  // Call this function when the page loads
