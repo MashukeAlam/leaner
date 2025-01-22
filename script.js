@@ -15,11 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function setGreeting() {
       const greeting = document.getElementById('greeting');
       const hour = new Date().getHours();
-      const name = localStorage.getItem('name') || 'Friend';
   
-      if (hour < 12) greeting.textContent = `Good morning, ${name}`;
-      else if (hour < 18) greeting.textContent = `Good afternoon, ${name}`;
-      else greeting.textContent = `Good evening, ${name}`;
+      if (hour < 12) greeting.textContent = `good morning`;
+      else if (hour < 18) greeting.textContent = `good afternoon`;
+      else greeting.textContent = `good evening`;
     }
     setGreeting();
   
@@ -113,9 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
       'Hydration is key to wellness'
     ],
     'fat-heart.png': [
-      'Fat cat fantastic, not sure about humans though',
       'How about cutting some sugar from your diet?',
-      'A lean cat would go further than this one',
+      'A leaner cat would go further than this one',
       'YHM (your heart matters)'
     ],
     'forward-bend.jpeg': [

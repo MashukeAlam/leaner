@@ -6,6 +6,10 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Random background generator using HSL for better control */
@@ -44,31 +48,32 @@ body {
 }
 
 .time {
-  font-size: 6rem;
-  margin-bottom: 20px;
+  font-size: 4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-weight: 300;
 }
 
 .greeting {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 1.12rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  font-weight: 300;
+  opacity: 0.5;
 }
 
 .focus {
-  margin: 30px 0;
+  margin: 1px 0;
 }
 
-.focus input {
+.focus input, .todo input {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
   background: none;
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.8);
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.5rem;
   width: 400px;
-  padding: 5px;
   text-align: center;
 }
 
@@ -141,7 +146,7 @@ body::after {
   margin-bottom: 16px;
   font-weight: 300;
   letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(122, 122, 122, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 8px;
 }
@@ -227,7 +232,7 @@ body::after {
 .todo-checkbox:checked::after {
   content: 'O';
   position: absolute;
-  color: white;
+  color: rgb(116, 116, 116);
   font-size: 14px;
   top: 50%;
   left: 50%;
@@ -236,7 +241,7 @@ body::after {
 
 .todo-text {
   flex: 1;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(126, 126, 126, 0.9);
   font-size: 1.1rem;
   transition: all 0.2s ease;
 }
@@ -297,12 +302,12 @@ body::after {
   right: 0;
   text-align: center;
   color: rgb(78, 78, 78);
-  padding: 10px;
+  padding: 8px;
   opacity: 0;
   transform: translateY(20px);
   animation: slideUp 0.5s ease-out 0.3s forwards;
   font-family: 'Comic Neue', 'Chalkboard SE', 'Marker Felt', cursive;
-  font-size: 24px;
+  font-size: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 

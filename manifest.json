@@ -4,8 +4,7 @@
     "version": "1.0",
     "description": "A beautiful health conscious dashboard for your new tabs",
     "permissions": [
-      "storage",
-      "geolocation"
+      "storage"
     ],
     "host_permissions": ["https://zenquotes.io/", "https://cdn.tailwindcss.com/"],
     "chrome_url_overrides": {
